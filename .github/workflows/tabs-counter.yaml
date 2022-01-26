@@ -31,7 +31,8 @@ jobs:
       - name: List all changed files
         run: |
           echo "${{ matrix.changed-files }} was changed" >> ${{ matrix.changed-files }}.log 2>&1
-          grep -P "\t" ${{ matrix.changed-files }} >> ${{ matrix.changed-files }}.log 2>&1
+          echo "Tabs count:" >> ${{ matrix.changed-files }}.log 2>&1
+          grep -P "\t" ${{ matrix.changed-files }} |  wc -l >> ${{ matrix.changed-files }}.log 2>&1
 
       - name: Upload report
         uses: actions/upload-artifact@v2
