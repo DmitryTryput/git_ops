@@ -20,15 +20,6 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v13.1
 
-      - name: List all changed files
-        run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "$file was changed" >> git_ops.log 
-          done
-      - name: Upload report
-        uses: actions/upload-artifact@v2
-        with:
-          path: git_ops.log
   create-logs:
     name: Log tabs count
     runs-on: ubuntu-latest
