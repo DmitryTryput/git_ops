@@ -1,2 +1,1 @@
 		text			tab
-		text        text   text                 text text
