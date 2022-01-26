@@ -23,6 +23,7 @@ jobs:
     strategy:
       matrix:
         changed-files: ${{fromJson(needs.find-changed-files.outputs.files)}}
+      fail-fast: false
     steps:
       - uses: actions/checkout@v2
       - name: List all changed files
