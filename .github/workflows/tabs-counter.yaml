@@ -9,13 +9,12 @@ jobs:
   find-changed-files:
     runs-on: ubuntu-latest
     outputs:
-      files: ${{ steps.changed-files.outputs.all }}
+      files: ${{ steps.files.outputs.all }}
     name: Get changed-files
     steps:
       - name: Get changed files
-        id: changed-files
+        id: files
         uses: jitterbit/get-changed-files@v1
-        continue-on-error: true
 
   create-logs:
     name: Log tabs count
